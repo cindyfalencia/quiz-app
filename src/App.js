@@ -6,6 +6,19 @@ import blobLeft from "./assets/left.jpg";
 import Question from "./components/Question";
 
 export default function App() {
+  const [gameStarted, setGameStarted] = React.useState(false);
+  const [questions, setQuestions] = React.useState([]);
+  const [answerChecked, setAnswerChecked] = React.useState(false);
+  const [score, setScore] = React.useState(0);
+
+  function increaseScore(){
+    setScore((prevScore) => prevScore + 1);
+  }
+
+  function decreaseScore(){
+    setScore((prevScore) => prevScore -1 );
+  }
+  
   return (
     <div className="App">
       <header className="App-header">
